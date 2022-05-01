@@ -1,0 +1,27 @@
+{
+  "name": "zip-drop",
+  "version": "0.1.0",
+  "description": "Webcomponent that accepts dropping of files, including zip files which are automatically extracted.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cjc/zip-drop.git"
+  },
+  "keywords": [
+    "webcomponent",
+    "dragdrop",
+    "vanillajs"
+  ],
+  "author": "cjc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cjc/zip-drop/issues"
+  },
+  "homepage": "https://github.com/cjc/zip-drop#readme",
+  "dependencies": {
+    "fflate": "^0.7.3"
+  }
+}
