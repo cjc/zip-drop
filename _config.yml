@@ -1,1 +1,16 @@
-theme: jekyll-theme-slate
+title: zip-drop
+description: >- 
+  Webcomponent that accepts dropping of files, including zip files which are automatically extracted.
+
+theme: minima
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
