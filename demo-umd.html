@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="./dist/zip-drop.umd.js"></script>
+
+    <zip-drop>
+      <h1>zip-drop test</h1>
+      <p><code>zip-drop</code> wraps arbitrary content and doesn't impact the UI until file(s) are dragged over the element.</p>
+      <p>When the files are dropped, any zip files are extracted and the contents added to the list of dropped files. All files are loaded to ArrayBuffers and a <code>dropFiles</code> event is fired. </p>
+      <p>All of this content is inside a <code>zip-drop</code> element. Drop a zip file here to list the files and the first 1000 characters of any <code>.txt</code> files</p>
+    </zip-drop>
+    <script>
+      document.querySelector('zip-drop').addEventListener('dropFiles', function (ev) {
+        ev.detail.forEach((f) => {
+          let h = document.createElement('h3');
+          h.innerText = f.name;
+          document.body.append(h);
+          if (f.name.endsWith('.txt')) {
+            let pre = document.createElement('pre');
+            pre.innerText = this.asText(f.body).slice(0,1000);
+            document.body.append(pre);
+          }
+        })
+      })
+    </script>
+  </body>
+</html>
+

@@ -1,10 +1,19 @@
 import resolve from '@rollup/plugin-node-resolve';
+import pkg from './package.json';
 
-export default {
+
+export default [{
   input: 'index.js',
   output: {
-    file: 'dist/zip-drop.esm.js',
+    file: pkg.module,
     format: 'esm'
   },
   plugins: [resolve()]
-};
+},{
+  input: 'index.js',
+  output: {
+    file: pkg.browser,
+	format: 'umd'
+  },
+  plugins: [resolve()]
+}];

@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "description": "Webcomponent that accepts dropping of files, including zip files which are automatically extracted.",
   "main": "index.js",
+  "module": "dist/zip-drop.esm.js",
+  "browser": "dist/zip-drop.umd.js",
   "scripts": {
     "build": "rollup --config",
     "test": "echo \"Error: no test specified\" && exit 1"
