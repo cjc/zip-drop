@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <script type="module">
-        import {ZipDrop} from './dist/zip-drop.esm-flat.js';
-        window.customElements.define("zip-drop", ZipDrop);
-    </script>
 
     <zip-drop>
       <h1>zip-drop test</h1>
@@ -12,7 +8,10 @@
       <p>When the files are dropped, any zip files are extracted and the contents added to the list of dropped files. All files are loaded to ArrayBuffers and a <code>dropFiles</code> event is fired. </p>
       <p>All of this content is inside a <code>zip-drop</code> element. Drop a zip file here to list the files and the first 1000 characters of any <code>.txt</code> files</p>
     </zip-drop>
-    <script>
+    <script type="module">
+      import {ZipDrop, strFromU8} from './dist/zip-drop.esm-flat.js';
+      window.customElements.define("zip-drop", ZipDrop);
+
       document.querySelector('zip-drop').addEventListener('dropFiles', function (ev) {
         ev.detail.forEach((f) => {
           let h = document.createElement('h3');
@@ -20,7 +19,7 @@
           document.body.append(h);
           if (f.name.endsWith('.txt')) {
             let pre = document.createElement('pre');
-            pre.innerText = this.asText(f.body).slice(0,1000);
+            pre.innerText = strFromU8(f.body).slice(0,1000);
             document.body.append(pre);
           }
         })
