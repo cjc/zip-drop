@@ -1,3 +1,4 @@
 import {ZipDrop} from './src/ZipDrop.js';
+import {strFromU8} from 'fflate';
 
-window.customElements.define("zip-drop", ZipDrop);
+export {ZipDrop, strFromU8};

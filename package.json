@@ -2,8 +2,9 @@
   "name": "@cjc/zip-drop",
   "version": "0.1.0",
   "description": "Webcomponent that accepts dropping of files, including zip files which are automatically extracted.",
-  "main": "index.js",
-  "module": "dist/zip-drop.esm.js",
+  "type":"module",
+  "main": "dist/zip-drop.umd.js",
+  "module": "src/ZipDrop.js",
   "browser": "dist/zip-drop.umd.js",
   "scripts": {
     "build": "rollup --config",
